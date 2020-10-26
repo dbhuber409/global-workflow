@@ -1,0 +1,14 @@
+#%Module#####################################################
+## enkf_chgres_recenter component - s4
+#############################################################
+
+module load license_intel/S4
+module load intel/18.0.3
+module load emc-hpc-stack/2020-q3
+module load nemsio/2.5.2
+module load bacio/2.4.1
+module load w3nco/2.4.1
+module load ip/3.3.3
+module load sp/2.3.3
+
+export FC="ifort -march=ivybridge"

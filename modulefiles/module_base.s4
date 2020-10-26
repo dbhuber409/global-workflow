@@ -1,0 +1,23 @@
+#%Module######################################################################
+##
+##      FV3GFS prerequisites
+##
+
+module load license_intel/S4
+module load intel/18.0.3
+module load gempak/7.5.1
+
+#Load from official NCEPLIBS
+module load emc-hpc-stack/2020-q3
+module load hdf5/1.10.6
+module load netcdf/4.7.4
+module load wgrib2/2.0.8
+module load g2tmpl/1.9.1
+module load grib_util/1.1.1
+module load crtm/2.3.0
+module load prod_util/1.1.0
+
+module load  esmf/8_1_0_beta_snapshot_27
+
+# python
+module load miniconda/3.7-base

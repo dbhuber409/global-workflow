@@ -1,0 +1,19 @@
+#%Module#####################################################
+## Module file for storm_reloc_v6.0.0 - S4
+#############################################################
+
+module load emc-hpc-stack/2020-q3
+module load w3emc/2.7.3
+module load w3nco/2.4.1
+module load bacio/2.4.1
+module load sp/2.3.3
+module load nemsio/2.5.2
+module load nemsiogfs/2.5.3
+module load sigio/2.3.2
+module load jasper/2.0.15
+module load png/1.6.35
+module load zlib/1.2.11
+module load g2/3.4.1
+
+export FC="ifort"
+export MyFFLAGS="-march=ivybridge"

@@ -175,6 +175,13 @@ export NCEPLIBS=/mnt/lfs3/projects/hfv3gfs/gwv/NCEPLIBS.15X
 export WRFPATH=$NCEPLIBS/wrf.shared.new/v1.1.1/src
 export myFC=mpiifort
 
+elif [[ -d /data/prod ]] ; then
+    # We are on SSEC's S4
+    target=s4
+    module purge
+    module load license_intel/S4
+    module load intel/18.0.3
+
 else
     echo WARNING: UNKNOWN PLATFORM 1>&2
 fi
