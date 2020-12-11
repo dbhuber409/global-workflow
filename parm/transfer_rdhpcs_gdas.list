@@ -17,6 +17,7 @@
 #  B  bytes, relative size of the path in relation to the other paths in the list
 #  D  delete, delete extraneous files from destination directories (takes no arg)
 #  E  encrypt, enables data encryption [two cores should be allocated] (takes no arg)
+#  W  whole files, copy whole files rather than use delta-xfer algorithm (takes no arg)  (v2.2.3+)
 #  T  two-way syncronization will update both sides with latest changes (takes no arg)
 #  Z  compress data as it is sent, accepts optional compression level argument (1-9)
 # Rules higher in the list take precedence over lower ones.  By default, all files in a
@@ -25,44 +26,42 @@
 
 com/gfs/_ENVIR_/gdas._PDYm1_/ _REMOTEPATH_/com/gfs/_ENVIR_/gdas._PDYm1_/
 + /??/
-+ /??/atmos/
-+ /??/atmos/gdas.t??z*tcvitals*
-+ /??/atmos/gdas.*bufr*
-+ /??/atmos/gdas.t??z.abias_pc
-+ /??/atmos/gdas.t??z.abias_air
-+ /??/atmos/gdas.t??z.abias
-+ /??/atmos/gdas.t??z.sfcf*.nc
-+ /??/atmos/gdas.t??z.engicegrb
-+ /??/atmos/gdas.t??z.atmf0*.nc
-+ /??/atmos/gdas.t??z.radstat
-+ /??/atmos/gdas.t??z.atmanl.nc
-+ /??/atmos/gdas.t??z.atmges.nc
-+ /??/atmos/gdas.t??z.atmgm3.nc
-+ /??/atmos/gdas.t??z.atmgp3.nc
-+ /??/atmos/gdas.t??z.sfcanl.nc
-+ /??/atmos/gdas.t??z.sstgrb
++ /??/gdas.t??z*tcvitals*
++ /??/gdas.*bufr*
++ /??/gdas.t??z.abias_pc
++ /??/gdas.t??z.abias_air
++ /??/gdas.t??z.abias
++ /??/gdas.t??z.sfcf*.nemsio
++ /??/gdas.t??z.engicegrb
++ /??/gdas.t??z.atmf0*.nemsio
++ /??/gdas.t??z.radstat
++ /??/gdas.t??z.atmanl.nemsio
++ /??/gdas.t??z.atmges.nemsio
++ /??/gdas.t??z.atmgm3.nemsio
++ /??/gdas.t??z.atmgp3.nemsio
++ /??/gdas.t??z.sfcanl.nemsio
++ /??/gdas.t??z.sstgrb
 - *
 E
 # This directory is a good candidate for compression
 #Z
 com/gfs/_ENVIR_/gdas._PDY_/ _REMOTEPATH_/com/gfs/_ENVIR_/gdas._PDY_/
 + /??/
-+ /??/atmos/
-+ /??/atmos/gdas.t??z*tcvitals*
-+ /??/atmos/gdas.*bufr*
-+ /??/atmos/gdas.t??z.abias_pc
-+ /??/atmos/gdas.t??z.abias_air
-+ /??/atmos/gdas.t??z.abias
-+ /??/atmos/gdas.t??z.sfcf*.nc
-+ /??/atmos/gdas.t??z.engicegrb
-+ /??/atmos/gdas.t??z.atmf0*.nc
-+ /??/atmos/gdas.t??z.radstat
-+ /??/atmos/gdas.t??z.atmanl.nc
-+ /??/atmos/gdas.t??z.atmges.nc
-+ /??/atmos/gdas.t??z.atmgm3.nc
-+ /??/atmos/gdas.t??z.atmgp3.nc
-+ /??/atmos/gdas.t??z.sfcanl.nc
-+ /??/atmos/gdas.t??z.sstgrb
++ /??/gdas.t??z*tcvitals*
++ /??/gdas.*bufr*
++ /??/gdas.t??z.abias_pc
++ /??/gdas.t??z.abias_air
++ /??/gdas.t??z.abias
++ /??/gdas.t??z.sfcf*.nemsio
++ /??/gdas.t??z.engicegrb
++ /??/gdas.t??z.atmf0*.nemsio
++ /??/gdas.t??z.radstat
++ /??/gdas.t??z.atmanl.nemsio
++ /??/gdas.t??z.atmges.nemsio
++ /??/gdas.t??z.atmgm3.nemsio
++ /??/gdas.t??z.atmgp3.nemsio
++ /??/gdas.t??z.sfcanl.nemsio
++ /??/gdas.t??z.sstgrb
 - *
 E
 # This directory is a good candidate for compression

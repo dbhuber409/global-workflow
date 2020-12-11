@@ -81,7 +81,11 @@ if [ $ics_from = "opsgfs" ]; then
         fanal[1]="./${CDUMP}.$yyyy$mm$dd/$cyc/${CDUMP}.t${cyc}z.atmanl.nemsio"
         fanal[2]="./${CDUMP}.$yyyy$mm$dd/$cyc/${CDUMP}.t${cyc}z.sfcanl.nemsio"
         flanal="${fanal[1]} ${fanal[2]}"
-        tarpref="gpfs_dell1_nco_ops_com"
+        if [ $CDATE -ge "2020022600" ]; then 
+          tarpref="com"
+        else 
+          tarpref="gpfs_dell1_nco_ops_com"
+        fi
         if [ $CDUMP = "gdas" ]; then
             tarball="$hpssdir/${tarpref}_gfs_prod_${CDUMP}.${yyyy}${mm}${dd}_${cyc}.${CDUMP}_nemsio.tar"
         elif [ $CDUMP = "gfs" ]; then
@@ -93,7 +97,7 @@ if [ $ics_from = "opsgfs" ]; then
     if [ $machine = "WCOSS_C" ]; then
 
         # Need COMROOT
-        module load prod_envir >> /dev/null 2>&1
+        module load prod_envir/1.1.0 >> /dev/null 2>&1
 
         comdir="$COMROOT/$CDUMP/prod/$CDUMP.$PDY"
         rc=0

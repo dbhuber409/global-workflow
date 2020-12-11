@@ -1,12 +1,17 @@
 #!/bin/sh
-set -xue
+#set -xue
+set -x
 
-while getopts "o" option;
+while getopts "oc" option;
 do
  case $option in
   o)
    echo "Received -o flag for optional checkout of GTG, will check out GTG with EMC_post"
    checkout_gtg="YES"
+   ;;
+  c)
+   echo "Received -c flag, check out ufs-weather-model develop branch with CCPP physics"  
+   run_ccpp="YES"
    ;;
   :)
    echo "option -$OPTARG needs an argument"

@@ -24,14 +24,14 @@ if [[ "$machine" = "WCOSS_DELL_P3" ]]; then
    export npe_node_max=28
 elif [[ "$machine" = "WCOSS_C" ]]; then
    export npe_node_max=24
-elif [[ "$machine" = "THEIA" ]]; then
-   export npe_node_max=24
 elif [[ "$machine" = "JET" ]]; then
    export npe_node_max=24
 elif [[ "$machine" = "HERA" ]]; then
    export npe_node_max=40
 elif [[ "$machine" = "S4" ]]; then
    export npe_node_max=32
+elif [[ "$machine" = "ORION" ]]; then
+   export npe_node_max=40
 fi
 
 
@@ -43,8 +43,8 @@ case $case_in in
         export layout_y=4
         export layout_x_gfs=2
         export layout_y_gfs=4
-        export npe_wav=14
-        export npe_wav_gfs=14
+        export npe_wav=140
+        export npe_wav_gfs=140
         export nth_fv3=1
         export cdmbgwd="0.071,2.1,1.0,1.0"  # mountain blocking, ogwd, cgwd, cgwd src scaling
         export WRITE_GROUP=1
@@ -59,8 +59,8 @@ case $case_in in
         export layout_y=4
         export layout_x_gfs=4
         export layout_y_gfs=4
-        export npe_wav=14
-        export npe_wav_gfs=14
+        export npe_wav=140
+        export npe_wav_gfs=140
         export nth_fv3=1
         export cdmbgwd="0.14,1.8,1.0,1.0"  # mountain blocking, ogwd, cgwd, cgwd src scaling
         export WRITE_GROUP=1
@@ -75,9 +75,9 @@ case $case_in in
         export layout_y=6
         export layout_x_gfs=4
         export layout_y_gfs=6
-        export npe_wav=21
-        export npe_wav_gfs=21
-        export nth_fv3=2
+        export npe_wav=140
+        export npe_wav_gfs=140
+        export nth_fv3=4
         export cdmbgwd="0.23,1.5,1.0,1.0"  # mountain blocking, ogwd, cgwd, cgwd src scaling
         export WRITE_GROUP=1
         export WRTTASK_PER_GROUP=$npe_node_max
@@ -91,8 +91,8 @@ case $case_in in
         export layout_y=8
         export layout_x_gfs=6
         export layout_y_gfs=6
-        export npe_wav=35  
-        export npe_wav_gfs=35  
+        export npe_wav=140
+        export npe_wav_gfs=140
         export nth_fv3=1
         export cdmbgwd="1.1,0.72,1.0,1.0"  # mountain blocking, ogwd, cgwd, cgwd src scaling
         export WRITE_GROUP=1
@@ -105,10 +105,10 @@ case $case_in in
         export DELTIM=150
         export layout_x=8
         export layout_y=12
-        export layout_x_gfs=16
-        export layout_y_gfs=24
+        export layout_x_gfs=8
+        export layout_y_gfs=12
         export npe_wav=140
-        export npe_wav_gfs=630
+        export npe_wav_gfs=140
         export nth_fv3=4
         export cdmbgwd="4.0,0.15,1.0,1.0"  # mountain blocking, ogwd, cgwd, cgwd src scaling
         export WRITE_GROUP=2
