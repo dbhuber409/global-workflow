@@ -202,6 +202,18 @@ link initial condition files from $ICSDIR to $COMROT'''
       account = 'fv3-cpu'
       queue = 'batch'
       queue_arch = 'service'
+    elif machine == 'S4':
+      base_git = '/data/prod/glopara/git'
+      base_svn = '/data/prod/glopara/svn'
+      dmpdir = '/data/prod/glopara/dump'
+      nwprod = '/data/prod/glopara/nwpara'
+      homedir = '/data/prod/$USER/test'
+      stmp = '/scratch/users/$USER/stmp'
+      ptmp = '/scratch/users/$USER/ptmp'
+      noscrub = '$HOMEDIR'
+      account = 'star'
+      queue = 's4'
+      queue_arch = 'serial'
 
     if args.icsdir is not None and not os.path.exists(icsdir):
         msg = 'Initial conditions do not exist in %s' % icsdir
