@@ -33,6 +33,8 @@ elif [[ "$machine" = "JET" ]]; then
    export npe_node_max=24
 elif [[ "$machine" = "HERA" ]]; then
    export npe_node_max=40
+elif [[ "$machine" = "S4" ]]; then
+   export npe_node_max=32
 fi
 
 if [ $step = "prep" -o $step = "prepbufr" ]; then
@@ -116,7 +118,10 @@ elif [ $step = "anal" ]; then
       export npe_anal=160
       export nth_anal=10
     fi
-    if [ $CASE = "C192" -o $CASE = "C96" -o $CASE = "C48" ]; then export npe_anal=84; fi
+    if [ $CASE = "C192" -o $CASE = "C96" -o $CASE = "C48" ]; then
+      export npe_anal=84
+      export npe_anal_gfs=84
+    fi
     if [[ "$machine" = "WCOSS_DELL_P3" ]]; then export nth_anal=7; fi
     export npe_node_anal=$(echo "$npe_node_max / $nth_anal" | bc)
     export nth_cycle=$npe_node_max
@@ -153,7 +158,13 @@ elif [ $step = "gldas" ]; then
 elif [ $step = "fcst" ]; then
 
     export wtime_fcst="00:30:00"
-    export wtime_fcst_gfs="02:30:00"
+    if [ $CASE = "C768" ]; then
+      export wtime_fcst_gfs="06:00:00"
+    elif [ $CASE = "C384" ]; then
+      export wtime_fcst_gfs="04:00:00"
+    else
+      export wtime_fcst_gfs="03:00:00"
+    fi
     export npe_fcst=$(echo "$layout_x * $layout_y * 6" | bc)
     export npe_fcst_gfs=$(echo "$layout_x_gfs * $layout_y_gfs * 6" | bc)
     export nth_fcst=${nth_fv3:-2}
