@@ -168,6 +168,19 @@ Create COMROT experiment directory structure'''
       account = 'fv3-cpu'
       queue = 'batch'
       queue_arch = 'service'
+    elif machine == 'S4':
+      #Don't know how to get these repos
+      base_git = '/data/prod/glopara/git'
+      base_svn = '/data/prod/glopara/svn'
+      dmpdir = '/data/prod/glopara/dump'
+      nwprod = '/data/prod/glopara/nwpara'
+      homedir = '/data/users/$USER'
+      stmp = '/scratch/short/users/$USER'
+      ptmp = '/scratch/short/users/$USER'
+      noscrub = '$HOMEDIR'
+      account = 'star'
+      queue = 's4'
+      queue_arch = 's4'
 
     # COMROT directory
     create_comrot = True
