@@ -138,7 +138,7 @@ fi
 # add appropriate WMO Headers.
 ########################################
 collect=' 1 2 3 4 5 6 7 8 9'
-if [ $machine == "HERA" -o  $machine == "JET" ]; then
+if [ $machine == "HERA" -o  $machine == "JET" -o $machine == "S4" ]; then
 for m in ${collect}
 do
 sh $USHbufrsnd/gfs_sndp.sh $m
@@ -147,7 +147,9 @@ done
 ################################################
 # Convert the bufr soundings into GEMPAK files
 ################################################
-sh $USHbufrsnd/gfs_bfr2gpk.sh
+if [ $machine != "S4" ]; then
+   sh $USHbufrsnd/gfs_bfr2gpk.sh
+fi
 
 else
 rm -rf poe_col
