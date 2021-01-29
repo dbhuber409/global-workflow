@@ -10,7 +10,7 @@ module load w3nco/2.4.1
 module load ip/3.3.3
 module load sp/2.3.3
 
-module load jasper/2.0.15
+module load jasper/2.0.22
 module load png/1.6.35
 module load zlib/1.2.11
 
