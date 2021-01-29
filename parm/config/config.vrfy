@@ -55,6 +55,9 @@ if [ $VRFYFITS = "YES" ]; then
         #export fitdir="$BASE_GIT/Fit2Obs/batrun"
         export fitdir="$BASE_GIT/verif/global/Fit2Obs/ncf-vqc/batrun"
         export PREPQFITSH="$fitdir/subfits_hera_slurm"
+    elif [ $machine = "S4" ]; then
+        export fitdir="$BASE_GIT/verif/global/Fit2Obs/ncf-vqc/batrun"
+        export PREPQFITSH="$fitdir/subfits_s4_slurm"
     fi
 
 fi
@@ -147,6 +150,10 @@ fi
 export HOMEens_tracker=$BASE_GIT/tracker/ens_tracker.${ens_tracker_ver}
 if [ $machine = "ORION" ] ; then
     export HOMEens_tracker=$BASE_GIT/tracker/TC_tracker.v1.1.15.2
+fi
+
+if [ $machine = "S4" ] ; then
+    export COMINsyn="/scratch/jcsda-dataset/hurricane"
 fi
 
 if [ "$VRFYTRAK" = "YES" ]; then
