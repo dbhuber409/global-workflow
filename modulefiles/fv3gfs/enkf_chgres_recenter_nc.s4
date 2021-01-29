@@ -1,5 +1,5 @@
 #%Module#####################################################
-## enkf_chgres_recenter component - hera
+## enkf_chgres_recenter component - S4
 #############################################################
 
 module load license_intel/S4
