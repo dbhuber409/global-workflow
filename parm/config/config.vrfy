@@ -55,7 +55,6 @@ if [ $VRFYFITS = "YES" ]; then
     elif [ $machine = "HERA" ]; then
         export PREPQFITSH="$fitdir/subfits_hera_slurm"
     elif [ $machine = "S4" ]; then
-        export fitdir="$BASE_GIT/verif/global/Fit2Obs/ncf-vqc/batrun"
         export PREPQFITSH="$fitdir/subfits_s4_slurm"
     elif [ $machine = "ORION" ]; then
         export PREPQFITSH="$fitdir/subfits_orion_netcdf"
