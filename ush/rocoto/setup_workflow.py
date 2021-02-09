@@ -191,7 +191,7 @@ def get_definitions(base):
 
     strings.append('\t<!ENTITY QUEUE      "%s">\n' % base['QUEUE'])
     strings.append('\t<!ENTITY QUEUE_SERVICE "%s">\n' % base['QUEUE_SERVICE'])
-    if scheduler in ['slurm'] and machine in ['ORION']:
+    if scheduler in ['slurm'] and machine in ['ORION','S4']:
         strings.append('\t<!ENTITY PARTITION_BATCH "%s">\n' % base['PARTITION_BATCH'])
     if scheduler in ['slurm']:
         strings.append('\t<!ENTITY PARTITION_SERVICE "%s">\n' % base['QUEUE_SERVICE'])
@@ -285,7 +285,7 @@ def get_gdasgfs_resources(dict_configs, cdump='gdas'):
 
         strings = []
         strings.append('\t<!ENTITY QUEUE_%s     "%s">\n' % (taskstr, queuestr))
-        if scheduler in ['slurm'] and machine in ['ORION'] and task not in ['arch']:
+        if scheduler in ['slurm'] and machine in ['ORION', 'S4'] and task not in ['arch']:
             strings.append('\t<!ENTITY PARTITION_%s "&PARTITION_BATCH;">\n' % taskstr )
         if scheduler in ['slurm'] and task in ['arch']:
             strings.append('\t<!ENTITY PARTITION_%s "&PARTITION_SERVICE;">\n' % taskstr )
@@ -339,6 +339,8 @@ def get_hyb_resources(dict_configs):
             strings = []
 
             strings.append('\t<!ENTITY QUEUE_%s     "%s">\n' % (taskstr, queuestr))
+            if machine in ['S4']:
+                strings.append('\t<!ENTITY PARTITION_%s "&PARTITION_BATCH;">\n' % taskstr )
             strings.append('\t<!ENTITY WALLTIME_%s  "%s">\n' % (taskstr, wtimestr))
             strings.append('\t<!ENTITY RESOURCES_%s "%s">\n' % (taskstr, resstr))
             if len(memstr) != 0:
@@ -361,7 +363,7 @@ def get_hyb_resources(dict_configs):
 
         strings = []
         strings.append('\t<!ENTITY QUEUE_%s     "%s">\n' % (taskstr, queuestr))
-        if scheduler in ['slurm'] and machine in ['ORION'] and task not in ['earc']:
+        if scheduler in ['slurm'] and machine in ['ORION', 'S4'] and task not in ['earc']:
             strings.append('\t<!ENTITY PARTITION_%s "&PARTITION_BATCH;">\n' % taskstr )
         if scheduler in ['slurm'] and task in ['earc']:
             strings.append('\t<!ENTITY PARTITION_%s "&PARTITION_SERVICE;">\n' % taskstr )

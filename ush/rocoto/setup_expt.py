@@ -246,9 +246,12 @@ link initial condition files from $ICSDIR to $COMROT'''
       ptmp = '/scratch/users/$USER'
       noscrub = '$HOMEDIR'
       account = 'star'
-      queue = 's4'
       queue_service = 'serial'
-      partition_batch = ''
+      partition_batch = partition   # Can be s4 or ivy (s4 by default)
+      if partition == "ivy":
+         queue = 'ivy'
+      else:
+         queue = 's4'
       chgrp_rstprod = 'NO'          # No rstprod on S4
       chgrp_cmd = 'ls'
       hpssarch = 'NO'
